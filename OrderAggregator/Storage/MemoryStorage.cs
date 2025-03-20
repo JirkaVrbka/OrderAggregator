@@ -15,14 +15,6 @@ public class MemoryStorage : IStorage
         return Task.CompletedTask;
     }
 
-    public Task<OrderDto> GetAsync(string orderId)
-    {
-        var order = new OrderDto { ProductId = orderId };
-        if (_store.TryGetValue(orderId, out var quantity))
-            order.Quantity = quantity;
-        
-        return Task.FromResult(order);
-    }
 
     public Task<List<OrderDto>> GetAllAsync()
     {
@@ -38,6 +30,7 @@ public class MemoryStorage : IStorage
     public Task<List<OrderDto>> GetAllAndClearAsync()
     {
         var orders = new List<OrderDto>();
+        
         // copy to prevent loosing data in between convert and cleaning
         var storedValues = _store.ToArray();
         _store.Clear();
@@ -50,9 +43,4 @@ public class MemoryStorage : IStorage
         return Task.FromResult(orders);
     }
 
-    public Task ClearAsync()
-    {
-        _store.Clear();
-        return Task.CompletedTask;
-    }
 }
