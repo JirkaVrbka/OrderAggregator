@@ -38,3 +38,5 @@ app.Run();
 
 // Improvements:
 //  - add cancellation tokens to async methods
+//  - use app setting with realtime update for configurable variables
+//  - create docker file
