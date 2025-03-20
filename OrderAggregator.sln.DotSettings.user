@@ -3,11 +3,5 @@
 	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/DotNetCliExePath/@EntryValue">/home/martini/.dotnet/dotnet</s:String>
 	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">/home/martini/.dotnet/sdk/8.0.303/MSBuild.dll</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=13793584_002De221_002D4861_002Db43a_002D999d5aad3cd4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddOrdersParallel" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::5878802F-06D6-423D-A672-BC788CCE19EE::net8.0::OrderAggregator.Tests.OrderServiceTests.AddOrdersParallel&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::5878802F-06D6-423D-A672-BC788CCE19EE::net8.0::OrderAggregator.Tests.OrderServiceTests.AddSingleOrderTest&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::5878802F-06D6-423D-A672-BC788CCE19EE::net8.0::OrderAggregator.Tests.OrderServiceTests.AddTwoOrdersTest&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::5878802F-06D6-423D-A672-BC788CCE19EE::net8.0::OrderAggregator.Tests.OrderServiceTests.AddOrdersWithMultipleProductsParallel&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::5878802F-06D6-423D-A672-BC788CCE19EE::net8.0::OrderAggregator.Tests.CollectorServiceTests.ClearAfterCollectedTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;Project Location="/home/martini/Desktop/Homeworks/OrderAggregator/OrderAggregator.Tests" Presentation="&amp;lt;OrderAggregator.Tests&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

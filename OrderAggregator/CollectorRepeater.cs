@@ -9,7 +9,7 @@ namespace OrderAggregator;
 /// <param name="collector">Collector interface that is repeatably send</param>
 public class OrderRepeater(ILogger<OrderRepeater> logger, ICollectorService collector) : BackgroundService
 {
-    private static readonly TimeSpan Interval = TimeSpan.FromSeconds(20); 
+    private static readonly TimeSpan Interval = TimeSpan.FromSeconds(EnvironmentVariable.SecondsToSend); 
     private static readonly PeriodicTimer Timer = new(Interval);
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
