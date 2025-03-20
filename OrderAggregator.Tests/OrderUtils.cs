@@ -31,6 +31,20 @@ public class OrderUtils
         return orders;
     }
     
+    public static List<OrderDto> GenerateMultiple(int repeat, string productId)
+    {
+        var rand = new Random();
+        var orders = new List<OrderDto>();
+        for (var i = 0; i < repeat; i++)
+            orders.Add(new()
+            {
+                ProductId = productId,
+                Quantity = rand.Next(10),
+            });
+        
+        return orders;
+    }
+    
     public static List<OrderDto> GenerateMultiple(int repeat)
     {
         var rand = new Random();
@@ -39,6 +53,21 @@ public class OrderUtils
             orders.Add(new()
             {
                 ProductId = rand.Next(10).ToString(),
+                Quantity = rand.Next(10)
+            });
+        
+        return orders;
+    }
+    
+        
+    public static List<OrderDto> GenerateMultipleWithUniqueIds(int repeat)
+    {
+        var rand = new Random();
+        var orders = new List<OrderDto>();
+        for (var i = 0; i < repeat; i++)
+            orders.Add(new()
+            {
+                ProductId = i.ToString(),
                 Quantity = rand.Next(10)
             });
         

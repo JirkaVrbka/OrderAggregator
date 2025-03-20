@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using OrderAggregator.Dtos;
+using OrderAggregator.Sender;
 using OrderAggregator.Services;
 
 namespace OrderAggregator.Tests;
@@ -23,7 +24,7 @@ public class CollectorServiceTests
     public async Task ClearAfterCollectedTest()
     {
         // Arrange
-        await _orderService.AddOrdersAsync(OrderUtils.GenerateMultiple(10));
+        await _orderService.AddOrdersAsync(OrderUtils.GenerateMultipleWithUniqueIds(10));
 
         // Act
         await _collectorService.CollectAsync();
@@ -32,7 +33,6 @@ public class CollectorServiceTests
         var orders = await _orderService.GetAllOrdersAsync();
         Assert.That(orders, Is.Empty);
         Assert.That(_savingSender.Orders, Has.Count.EqualTo(10));
-
     }
 
 
