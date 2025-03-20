@@ -2,7 +2,12 @@ using OrderAggregator.Services;
 
 namespace OrderAggregator;
 
-public class OrderSender(ILogger<OrderSender> logger, ICollectorService collector) : BackgroundService
+/// <summary>
+/// Background service for repeated sending of orders to external system
+/// </summary>
+/// <param name="logger">Logger for service</param>
+/// <param name="collector">Collector interface that is repeatably send</param>
+public class OrderRepeater(ILogger<OrderRepeater> logger, ICollectorService collector) : BackgroundService
 {
     private static readonly TimeSpan Interval = TimeSpan.FromSeconds(20); 
     private static readonly PeriodicTimer Timer = new(Interval);
