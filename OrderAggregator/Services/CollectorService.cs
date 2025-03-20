@@ -1,3 +1,4 @@
+using OrderAggregator.Sender;
 using OrderAggregator.Storage;
 
 namespace OrderAggregator.Services;
@@ -10,6 +11,7 @@ public class CollectorService(ILogger<CollectorService> logger, IStorage storage
 
         var orders = await storage.GetAllAndClearAsync();
         
-        await sender.SendAsync(orders);
+        if (orders.Any())
+            await sender.SendAsync(orders);
     }
 }
