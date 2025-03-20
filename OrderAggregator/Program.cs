@@ -1,4 +1,5 @@
 using OrderAggregator;
+using OrderAggregator.Sender;
 using OrderAggregator.Services;
 using OrderAggregator.Storage;
 
@@ -17,7 +18,7 @@ builder.Services.AddSingleton<IStorage, MemoryStorage>();
 builder.Services.AddSingleton<ISender, ConsoleSender>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<ICollectorService, CollectorService>();
-builder.Services.AddHostedService<OrderSender>();
+builder.Services.AddHostedService<OrderRepeater>();
 
 
 

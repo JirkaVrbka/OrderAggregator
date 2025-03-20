@@ -1,13 +1,7 @@
 using OrderAggregator.Dtos;
 
-namespace OrderAggregator;
+namespace OrderAggregator.Sender;
 
-public interface ISender
-{
-    Task SendAsync(List<OrderDto> order);
-}
-
-// Console sender is here for demo only
 public class ConsoleSender : ISender
 {
     public Task SendAsync(List<OrderDto> order)
