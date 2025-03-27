@@ -1,4 +1,4 @@
-# Order aggregator 
+# HW Task - Order aggregator 
 
 - Publishes RESP API endpoint accepting one or more ordrs in format:
   ```json
